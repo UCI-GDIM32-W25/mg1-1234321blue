@@ -34,10 +34,20 @@ public class Player : MonoBehaviour
         {
             _playerTransform.Translate(Vector2.right*_speed*Time.deltaTime);
         }
+        PlantSeed();
     }
 
     public void PlantSeed ()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)&&_numSeeds>0)
+        {
+            GameObject seed = Instantiate (_plantPrefab,_playerTransform);
+            seed.transform.parent = null;
+            _numSeeds--;
+            _numSeedsLeft=_numSeeds;
+            _numSeedsPlanted++;
+            _plantCountUI.UpdateSeeds(_numSeedsLeft,_numSeedsPlanted);
+            Debug.Log("hey");
+        }
     }
 }
