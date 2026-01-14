@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
             _numSeedsLeft=_numSeeds;
             _numSeedsPlanted++;
             _plantCountUI.UpdateSeeds(_numSeedsLeft,_numSeedsPlanted);
-            Debug.Log("hey");
         }
     }
 }
